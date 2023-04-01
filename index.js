@@ -69,9 +69,10 @@ Vector3.isVector3 = function(variable) {
 }
 /** @namespace Array */
 /** @function isAllType 
+ * @description Determines whether or not all elements in an array have a specific type, or a type within a set of options.
  * @memberof Array
  * @param {Array} array - Array with values to determine type of
- * @param {String | Array<String>} type - type that the values should all be in order to return true
+ * @param {String | Array<String>} type - type or types that the values should all be in order to return true
 */
 Array.isAllType = function(array,type) {
     if (Array.isArray(array)) {
