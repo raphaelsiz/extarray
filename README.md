@@ -8,3 +8,4 @@ array.functionHere()
 import {Vector2} from 'extarray'
 let position = new Vector2(0,1)
 ```
+[Docs](/out/index.html)
