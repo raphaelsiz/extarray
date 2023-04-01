@@ -78,10 +78,16 @@ Array.prototype.add = function(value){
     let i = this.indexOf(value);
     if (i === -1) this.push(value);
 }
+/** @function remove
+ * @memberof Array
+*/
 Array.prototype.remove = function(value) {
     let i = this.indexOf(value);
     if (i !== -1) this.splice(i,1);
 }
+/** @function vectorAdd
+ * @memberof Array
+*/
 Array.prototype.vectorAdd = function(array) {
     if (Array.isArray(array)) {
         let newArray = [];
