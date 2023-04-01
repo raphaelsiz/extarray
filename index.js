@@ -108,6 +108,7 @@ Array.prototype.vectorAdd = function(array) {
         if (this instanceof Vector3) return new Vector3(...newArray)
         return newArray;
     }
+    else console.error("TypeError: array param must be of type Array")
 }
 Array.prototype.vectorMultiply = function(array) {
     if (Array.isArray(array)) {
@@ -118,5 +119,7 @@ Array.prototype.vectorMultiply = function(array) {
             if (this instanceof Vector3) return new Vector3(...newArray)
             return newArray;
         }
+        else console.error("Both arrays must be of all numbers!")
     }
+    else console.error("TypeError: array param must be of type Array")
 }
