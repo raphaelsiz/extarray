@@ -1,11 +1,54 @@
+/** @description
+ * testing
+ */
+
+/**@constructor */
+/**
+ * Description placeholder
+ * @date 3/31/2023 - 11:54:30 PM
+ *
+ * @export
+ * @class Vector2
+ * @typedef {Vector2}
+ * @extends {Array}
+ */
 export class Vector2 extends Array {
+    
+    /**
+     * Creates an instance of Vector2.
+     * @date 4/1/2023 - 12:07:06 AM
+     *
+     * @constructor
+     * @param {number} x
+     * @param {number} y
+     */
     constructor(x,y) {
         if (x == undefined) return super(0,0);
         if (y == undefined) return super(x,0);
         return super(x,y);
     }
 }
+
+/**
+ * Description placeholder
+ * @date 4/1/2023 - 12:01:52 AM
+ *
+ * @export
+ * @class Vector3
+ * @typedef {Vector3}
+ * @extends {Array}
+ */
 export class Vector3 extends Array {
+
+    /**
+     * Creates an instance of Vector3.
+     * @date 4/1/2023 - 12:07:43 AM
+     *
+     * @constructor
+     * @param {*} x
+     * @param {*} y
+     * @param {*} z
+     */
     constructor(x,y,z) {
         if (x == undefined) return super(0,0,0);
         if (y == undefined) return super(x,0,0);
@@ -25,4 +68,22 @@ Vector3.isVector3 = function(variable) {
 }
 Array.prototype.testing = function() {
     return "it works!"
+}
+Array.prototype.add = function(value){
+    let i = this.indexOf(value);
+    if (i === -1) this.push(value);
+}
+Array.prototype.remove = function(value) {
+    let i = this.indexOf(value);
+    if (i !== -1) this.splice(i,1);
+}
+Array.prototype.vectorAdd = function(array) {
+    if (Array.isArray(array)) {
+        let newArray = [];
+        for (let i = 0; i <= Math.min(this.length,array.length); i++) newArray[i] = this[i] + array[i];
+        return newArray;
+    }
+}
+Array.prototype.vectorMultiply = function(array) {
+
 }
