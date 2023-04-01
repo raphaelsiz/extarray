@@ -4,7 +4,6 @@
 
 /**@constructor */
 /**
- * see {@link Vector2#isVector2}
  * @date 3/31/2023 - 11:54:30 PM
  *
  * @export
@@ -41,9 +40,9 @@ export class Vector3 extends Array {
 
     /**
      * Creates an instance of Vector3.
-     * @param {*} x
-     * @param {*} y
-     * @param {*} z
+     * @param {number} x
+     * @param {number} y
+     * @param {number} z
      */
     constructor(x,y,z) {
         if (x == undefined) return super(0,0,0);
@@ -54,7 +53,7 @@ export class Vector3 extends Array {
 }
 /** @function isVector2
  * @memberof Vector2
- * @param {*} variable*/
+ * @param {*} variable - Variable to determine type of*/
 Vector2.isVector2 = function(variable) {
     if (variable instanceof Vector2) return true;
     if (Array.isArray(variable) && variable.length === 2) return (!variable.filter(x => (typeof x != "number")).length)
@@ -62,7 +61,7 @@ Vector2.isVector2 = function(variable) {
 }
 /** @function isVector3
  * @memberof Vector3 
- * @param {*} variable*/
+ * @param {*} variable - Variable to determine type of*/
 Vector3.isVector3 = function(variable) {
     if (variable instanceof Vector3) return true;
     if (Array.isArray(variable) && variable.length === 3) return (!variable.filter(x => (typeof x != "number")).length)
@@ -71,8 +70,8 @@ Vector3.isVector3 = function(variable) {
 /** @namespace Array */
 /** @function isAllType 
  * @memberof Array
- * @param {Array} array
- * @param {String} type
+ * @param {Array} array - Array with values to determine type of
+ * @param {String} type - type that the values should all be in order to return true
 */
 Array.isAllType = function(array,type) {
     if (Array.isArray(array)) {
@@ -84,14 +83,18 @@ Array.isAllType = function(array,type) {
     return false;
 }
 /** @function  add
+ * @description Pushes a value to the array if not yet present
  * @memberof Array
+ * @param {*} value - the value to add to the array
 */
 Array.prototype.add = function(value){
     let i = this.indexOf(value);
     if (i === -1) this.push(value);
 }
 /** @function remove
+ * @description Removes a value from the array if present (without breaking anything if not)
  * @memberof Array
+ * @param {*} value - value to remove from the 
 */
 Array.prototype.remove = function(value) {
     let i = this.indexOf(value);
@@ -99,6 +102,8 @@ Array.prototype.remove = function(value) {
 }
 /** @function vectorAdd
  * @memberof Array
+ * @param {Array<String | number>} array - An array of strings or numbers to add to the "vector."
+ * @returns {Array<String | number>}
 */
 Array.prototype.vectorAdd = function(array) {
     if (Array.isArray(array)) {
@@ -110,6 +115,11 @@ Array.prototype.vectorAdd = function(array) {
     }
     else console.error("TypeError: array param must be of type Array")
 }
+/** @function vectorMultiply
+ * @memberof Array
+ * @param {Array<number>} array - Another vector to add to the "vector."
+ * @returns {Array | Vector2 | Vector3}
+*/
 Array.prototype.vectorMultiply = function(array) {
     if (Array.isArray(array)) {
         if (Array.isAllType(this,"number") && Array.isAllType(array,"number")) {
