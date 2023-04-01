@@ -23,3 +23,6 @@ Vector3.isVector3 = function(variable) {
     if (Array.isArray(variable) && variable.length === 3) return (!variable.filter(x => (typeof x != "number")).length)
     return false;
 }
+Array.prototype.testing = function() {
+    return "it works!"
+}
