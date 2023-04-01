@@ -1,5 +1,5 @@
 {
-  "name": "extarray",
+  "name": "@raphaelsiz/test-extarray",
   "version": "1.0.0",
   "description": "Extended Array capabilities",
   "main": "index.js",
