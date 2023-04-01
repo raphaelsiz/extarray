@@ -101,11 +101,20 @@ Array.prototype.add = function(value){
 /** @function remove
  * @description Removes a value from the array if present (without breaking anything if not)
  * @memberof Array
- * @param {*} value - value to remove from the 
+ * @param {*} value - value to remove from the array
 */
 Array.prototype.remove = function(value) {
     let i = this.indexOf(value);
     if (i !== -1) this.splice(i,1);
+}
+/** @function toggle
+ * @description Toggles whether or not the array contains this value
+ * @memberof Array
+ * @param {*} value - value to toggle
+ */
+Array.prototype.toggle = function(value) {
+    let i = this.indexOf(value);
+    (i == -1) ? this.push(value) : this.splice(i,1);
 }
 /** @function vectorAdd
  * @memberof Array
