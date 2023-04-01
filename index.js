@@ -110,5 +110,13 @@ Array.prototype.vectorAdd = function(array) {
     }
 }
 Array.prototype.vectorMultiply = function(array) {
-
+    if (Array.isArray(array)) {
+        if (Array.isAllType(this,"number") && Array.isAllType(array,"number")) {
+            let newArray = [];
+            for (let i = 0; i <= Math.min(this.length,array.length); i++) newArray[i] = this[i] * array[i];
+            if (this instanceof Vector2) return new Vector2(...newArray)
+            if (this instanceof Vector3) return new Vector3(...newArray)
+            return newArray;
+        }
+    }
 }
