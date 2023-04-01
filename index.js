@@ -71,10 +71,16 @@ Vector3.isVector3 = function(variable) {
 /** @function isAllType 
  * @memberof Array
  * @param {Array} array - Array with values to determine type of
- * @param {String} type - type that the values should all be in order to return true
+ * @param {String | Array<String>} type - type that the values should all be in order to return true
 */
 Array.isAllType = function(array,type) {
     if (Array.isArray(array)) {
+        if (Array.isArray(type)) {
+            array.map(val=>{
+                if (!type.includes(typeof val)) return false;
+            })
+            return true;
+        }
         array.map(val=>{
             if (typeof val != type) return false;
         });
