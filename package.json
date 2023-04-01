@@ -1,0 +1,22 @@
+{
+  "name": "extarray",
+  "version": "1.0.0",
+  "description": "Extended Array capabilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raphaelsiz/extarray.git"
+  },
+  "keywords": [
+    "array"
+  ],
+  "author": "raphaelSiz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raphaelsiz/extarray/issues"
+  },
+  "homepage": "https://github.com/raphaelsiz/extarray#readme"
+}
