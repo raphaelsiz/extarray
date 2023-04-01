@@ -53,23 +53,35 @@ export class Vector3 extends Array {
     }
 }
 /** @function isVector2
- * @memberof Vector2*/
+ * @memberof Vector2
+ * @param {*} variable*/
 Vector2.isVector2 = function(variable) {
     if (variable instanceof Vector2) return true;
     if (Array.isArray(variable) && variable.length === 2) return (!variable.filter(x => (typeof x != "number")).length)
     return false;
 }
 /** @function isVector3
- * @memberof Vector3 */
+ * @memberof Vector3 
+ * @param {*} variable*/
 Vector3.isVector3 = function(variable) {
     if (variable instanceof Vector3) return true;
     if (Array.isArray(variable) && variable.length === 3) return (!variable.filter(x => (typeof x != "number")).length)
     return false;
 }
 /** @namespace Array */
-
-Array.prototype.testing = function() {
-    return "it works!"
+/** @function isAllType 
+ * @memberof Array
+ * @param {Array} array
+ * @param {String} type
+*/
+Array.isAllType = function(array,type) {
+    if (Array.isArray(array)) {
+        array.map(val=>{
+            if (typeof val != type) return false;
+        });
+        return true;
+    }
+    return false;
 }
 /** @function  add
  * @memberof Array
